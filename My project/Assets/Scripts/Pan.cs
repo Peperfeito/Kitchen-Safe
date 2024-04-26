@@ -62,7 +62,8 @@ public class Pan : MonoBehaviour
                 panelaUi.SetActive(false);
                 prontoUi.SetActive(true);
                 pratodearroz.SetActive(true);
-                
+                Destroy(this.gameObject);
+
             }
 
         }
