@@ -9,7 +9,7 @@ public class MenuInicial : MonoBehaviour
     {
         SceneManager.LoadScene(cena);
 
-        Debug.Log("apertei o botão");
+        
 
 
     }

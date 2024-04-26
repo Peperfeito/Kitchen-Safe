@@ -7,6 +7,10 @@ TagManager:
   - Table
   - Pan
   - MiniGameTrigger
+  - Cebola
+  - Alho
+  - Arroz
+  - Agua
   layers:
   - Default
   - TransparentFX
