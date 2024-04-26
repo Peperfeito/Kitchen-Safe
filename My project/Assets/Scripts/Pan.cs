@@ -9,6 +9,13 @@ public class Pan : MonoBehaviour
     public GameObject arrozUi;
     public GameObject aguaUi;
     public GameObject prontoUi;
+    public GameObject pratodearroz;
+    
+    public bool cebolapronto = false;
+    public bool alhopronto = false;
+    public bool arrozpronto = false;
+    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,29 +23,47 @@ public class Pan : MonoBehaviour
         {
             panelaUi.SetActive(false);
             alhoUi.SetActive(true);
+            cebolapronto = true;
 
         }
 
         if (collision.gameObject.CompareTag("Alho"))
         {
-            panelaUi.SetActive(false);
-            arrozUi.SetActive(true);
+            
 
+            if (cebolapronto == true)
+            {
+                panelaUi.SetActive(false);
+                arrozUi.SetActive(true);
+                alhopronto = true;
+            }
         }
 
         if (collision.gameObject.CompareTag("Arroz"))
         {
-            Destroy(collision.gameObject);
-            panelaUi.SetActive(false);
-            aguaUi.SetActive(true);
+            
+            if (alhopronto == true)
+            {
+                Destroy(collision.gameObject);
+                panelaUi.SetActive(false);
+                aguaUi.SetActive(true);
+                arrozpronto = true;
+            }
 
         }
 
         if (collision.gameObject.CompareTag("Agua"))
         {
-            Destroy(collision.gameObject);
-            panelaUi.SetActive(false);
-            prontoUi.SetActive(true);
+            
+
+            if (arrozpronto == true)
+            {
+                Destroy(collision.gameObject);
+                panelaUi.SetActive(false);
+                prontoUi.SetActive(true);
+                pratodearroz.SetActive(true);
+                
+            }
 
         }
 
