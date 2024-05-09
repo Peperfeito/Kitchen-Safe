@@ -4166,7 +4166,7 @@ MonoBehaviour:
   _androidBanerId: Banner_Android
   _iOSGameId: 5606776
   _iOSBanerId: Banner_iOS
-  _testMode: 1
+  _testMode: 0
 --- !u!4 &1493203052
 Transform:
   m_ObjectHideFlags: 0
