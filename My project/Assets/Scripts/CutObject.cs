@@ -9,11 +9,15 @@ public class CutObject : MonoBehaviour
     public GameObject corteUi;
     public GameObject panelaUi;
 
+    SpawnObject spawn;
+
     private void OnMouseDown()
     {
-        corteUi.SetActive(false);
-        panelaUi.SetActive(true);
-        Instantiate(cutObject, cutObjectPosition.transform.position, cutObjectPosition.transform.rotation);
-        Destroy(this.gameObject);
+                
+            corteUi.SetActive(false);
+            panelaUi.SetActive(true);
+            Instantiate(cutObject, cutObjectPosition.transform.position, cutObjectPosition.transform.rotation);
+            Destroy(this.gameObject);
+        
     }
 }

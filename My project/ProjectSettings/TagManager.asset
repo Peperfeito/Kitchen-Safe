@@ -11,6 +11,8 @@ TagManager:
   - Alho
   - Arroz
   - Agua
+  - CebolaCortada
+  - AlhoCortado
   layers:
   - Default
   - TransparentFX
