@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.Purchasing;
 
 public class MonetizationManager : MonoBehaviour, IUnityAdsInitializationListener
 {
     //
+    public static Action<string> OnPurchaseCompleted;
+
     public string _androidGameId;
     public string _androidBanerId;
     public string _iOSGameId;
@@ -50,6 +54,7 @@ public class MonetizationManager : MonoBehaviour, IUnityAdsInitializationListene
 
     public void LoadBanner()
     {
+        if (HasPurchased("removerbaner")) return;
         // Set up options to notify the SDK of load events:
         BannerLoadOptions options = new BannerLoadOptions
         {
@@ -62,6 +67,7 @@ public class MonetizationManager : MonoBehaviour, IUnityAdsInitializationListene
     }
     void OnBannerLoaded()
     {
+        if (HasPurchased("removerbaner")) return;
         Debug.Log("Banner loaded");
         Advertisement.Banner.Show(_banerId, null);
 
@@ -72,6 +78,21 @@ public class MonetizationManager : MonoBehaviour, IUnityAdsInitializationListene
     {
         Debug.Log($"Banner Error: {message}");
         // Optionally execute additional code, such as attempting to load another ad.
+    }
+
+    public void PurchaseCompleted(Product product)
+    {
+        PlayerPrefs.SetInt("PURCHASED" + product.definition.id, 1);
+        PlayerPrefs.Save();
+
+        if(HasPurchased("removerbaner")) Advertisement.Banner.Hide();
+
+        if(OnPurchaseCompleted != null) OnPurchaseCompleted(product.definition.id);
+    }
+
+    public static bool HasPurchased(string productID)
+    {
+        return PlayerPrefs.GetInt("PURCHASED" + productID) == 1;
     }
 }
 
