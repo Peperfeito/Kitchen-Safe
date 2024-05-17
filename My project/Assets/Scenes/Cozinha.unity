@@ -5237,6 +5237,16 @@ MonoBehaviour:
   alhopronto: 0
   arrozpronto: 0
   aguapronto: 0
+  cebolaPanela: 0
+  alhoPanela: 0
+  arrozPanela: 0
+  aguaPanela: 0
+  alhocorte: 0
+  cebolacorte: 0
+  cebolaordem: 0
+  alhoordem: 0
+  aguaordem: 0
+  arrozordem: 0
 --- !u!4 &1335279628
 Transform:
   m_ObjectHideFlags: 0
@@ -5449,7 +5459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTag: Pan
   placedObject: {fileID: 166467989}
-  placedObjectPosition: {fileID: 0}
+  placedObjectPosition: {fileID: 1968553951}
 --- !u!114 &1346737534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5462,7 +5472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbcc630aeee22248ab8ae50322f08b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectColor: {r: 1, g: 1, b: 1, a: 0.09803922}
+  objectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &1346737535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6012,10 +6022,6 @@ MonoBehaviour:
   prontoUi: {fileID: 292388090}
   arrozUi: {fileID: 1423921934}
   pratodearroz: {fileID: 1427762742}
-  arrozpronto: 0
-  cebolapronto: 0
-  alhopronto: 0
-  aguapronto: 0
 --- !u!1 &1453428805
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,7 +6210,7 @@ GameObject:
   - component: {fileID: 1488542352}
   m_Layer: 0
   m_Name: CutObjectAlho
-  m_TagString: Untagged
+  m_TagString: Alho
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7216,7 +7222,7 @@ GameObject:
   - component: {fileID: 1971111206}
   m_Layer: 0
   m_Name: CutObjectCebola
-  m_TagString: Untagged
+  m_TagString: Cebola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7449,7 +7455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbcc630aeee22248ab8ae50322f08b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectColor: {r: 1, g: 1, b: 1, a: 0.09803922}
+  objectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2004576714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7464,7 +7470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTag: Pan
   placedObject: {fileID: 166467989}
-  placedObjectPosition: {fileID: 0}
+  placedObjectPosition: {fileID: 1968553951}
 --- !u!61 &2004576715
 BoxCollider2D:
   m_ObjectHideFlags: 0

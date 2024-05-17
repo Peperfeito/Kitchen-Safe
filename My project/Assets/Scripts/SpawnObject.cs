@@ -18,15 +18,35 @@ public class SpawnObject : MonoBehaviour
     public GameObject panelaUi;
     public GameObject fritarUi;
 
+    
+
     public bool cebolapronto = false;
     public bool alhopronto = false;
     public bool arrozpronto = false;
     public bool aguapronto = false;
+    public bool cebolaPanela = false;
+    public bool alhoPanela = false;
+    public bool arrozPanela = false;
+    public bool aguaPanela = false;
+    public bool alhocorte = false;
+    public bool cebolacorte = false;
+    public bool cebolaordem = false;
+    public bool alhoordem = false;
+    public bool aguaordem = false;
+    public bool arrozordem = false;
+
+
+
+    public void Start()
+    {
+        
+       
+    }
 
     public void SpawnObject1()
     {
         Instantiate(objectToSpawn1, objectSpawner.transform.position, objectSpawner.transform.rotation);
-        if(cebolapronto == true) 
+        if(cebolaordem == true) 
         {
             if (alhopronto == false)
             {
@@ -52,7 +72,7 @@ public class SpawnObject : MonoBehaviour
     {
         Instantiate(objectToSpawn3, objectSpawner.transform.position, objectSpawner.transform.rotation);
         
-        if (alhopronto == true)
+        if (alhoordem == true)
         {
             if (arrozpronto == false)
             {
@@ -70,7 +90,7 @@ public class SpawnObject : MonoBehaviour
         Instantiate(objectToSpawn4, objectSpawner.transform.position, objectSpawner.transform.rotation);
         
 
-        if (arrozpronto == true)
+        if (arrozordem == true)
         {
             if (aguapronto == false)
             {

@@ -13,57 +13,131 @@ public class Pan : MonoBehaviour
     private SpawnObject spawnObject;
 
     
-    public bool arrozpronto = false;
-    public bool cebolapronto = false;
-    public bool alhopronto = false;
-    public bool aguapronto = false;
 
 
+
+
+    private void Start()
+    {
+        spawnObject = GameObject.Find("SpawnerManager").GetComponent<SpawnObject>();
+        
+
+    }
     private void Update()
     {
-        if ((arrozpronto == true) && (cebolapronto == true) && (alhopronto == true) && (aguapronto == true))
-        {
-            prontoUi.SetActive(true);
-            pratodearroz.SetActive(true);
-
-
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("CebolaCortada"))
         {
-            if (cebolapronto == false)
+            Destroy(collision.gameObject);
+            if (spawnObject.cebolacorte == true)
             {
-                panelaUi.SetActive(false);
-                alhoUi.SetActive(true);
-                cebolapronto = true;
+                if (!spawnObject.cebolaPanela)
+                {
+                    panelaUi.SetActive(false);
+                    alhoUi.SetActive(true);
+                    spawnObject.cebolaPanela = true;
+                    spawnObject.cebolaordem = true;
+                }
+            }
+
+            if(spawnObject.cebolaPanela == true)
+            {
+                if (spawnObject.alhoPanela == true)
+                {
+                    if (spawnObject.arrozPanela == true)
+                    {
+                        if (spawnObject.aguaPanela == true)
+                        {
+                            aguaUi.SetActive(false);
+                            panelaUi.SetActive(false);
+                            prontoUi.SetActive(true);
+                            pratodearroz.SetActive(true);
+                            alhoUi.SetActive(false);
+
+
+                            Destroy(this.gameObject);
+                        }
+                    }
+                }
             }
 
         }
 
         if (collision.gameObject.CompareTag("AlhoCortado"))
         {
-            if (alhopronto == false)
+            Destroy(collision.gameObject);
+            spawnObject.alhoPanela = true;
+            if (spawnObject.alhocorte == true)
             {
-                panelaUi.SetActive(false);
-                arrozUi.SetActive(true);
-                alhopronto = true;
+                if (spawnObject.alhoordem == false)
+                {
+                    panelaUi.SetActive(false);
+                    arrozUi.SetActive(true);
+                    spawnObject.alhoordem = true;
+                }
+            }
+
+            if (spawnObject.cebolaPanela == true)
+            {
+                if (spawnObject.alhoPanela == true)
+                {
+                    if (spawnObject.arrozPanela == true)
+                    {
+                        if (spawnObject.aguaPanela == true)
+                        {
+                            aguaUi.SetActive(false);
+                            panelaUi.SetActive(false);
+                            prontoUi.SetActive(true);
+                            pratodearroz.SetActive(true);
+                            alhoUi.SetActive(false);
+
+
+                            Destroy(this.gameObject);
+                        }
+                    }
+                }
             }
         }
 
         if (collision.gameObject.CompareTag("Arroz"))
         {
-            
-            if (alhopronto == true)
+            Destroy(collision.gameObject);
+            spawnObject.arrozPanela = true;
+            if (spawnObject.arrozpronto == true)
             {
-                if (arrozpronto == false)
+                if (spawnObject.arrozordem == false)
                 {
-                    Destroy(collision.gameObject);
+                    
                     panelaUi.SetActive(false);
                     aguaUi.SetActive(true);
-                    arrozpronto = true;
+                    spawnObject.arrozordem = true; 
+
+
+                }
+            }
+
+            if (spawnObject.cebolaPanela == true)
+            {
+                if (spawnObject.alhoPanela == true)
+                {
+                    if (spawnObject.arrozPanela == true)
+                    {
+                        if (spawnObject.aguaPanela == true)
+                        {
+                            aguaUi.SetActive(false);
+                            panelaUi.SetActive(false);
+                            prontoUi.SetActive(true);
+                            pratodearroz.SetActive(true);
+                            alhoUi.SetActive(false);
+
+
+                            Destroy(this.gameObject);
+                        }
+                    }
                 }
             }
 
@@ -71,24 +145,46 @@ public class Pan : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Agua"))
         {
+            Destroy(collision.gameObject);
+            spawnObject.aguaPanela = true;
 
-
-            if (arrozpronto == true)
+            if (spawnObject.aguapronto == true)
             {
-                if (aguapronto == false)
+                if (spawnObject.aguaordem == false)
                 {
-                    Destroy(collision.gameObject);
+                    
                     aguaUi.SetActive(false);
                     panelaUi.SetActive(false);
                     prontoUi.SetActive(true);
                     pratodearroz.SetActive(true);
 
-                    aguapronto = true;
+                   
                     Destroy(this.gameObject);
                 }
 
             }
 
+        }
+
+        if (spawnObject.cebolaPanela == true)
+        {
+            if (spawnObject.alhoPanela == true)
+            {
+                if (spawnObject.arrozPanela == true)
+                {
+                    if (spawnObject.aguaPanela == true)
+                    {
+                        aguaUi.SetActive(false);
+                        panelaUi.SetActive(false);
+                        prontoUi.SetActive(true);
+                        pratodearroz.SetActive(true);
+                        alhoUi.SetActive(false);
+
+
+                        Destroy(this.gameObject);
+                    }
+                }
+            }
         }
 
     }
