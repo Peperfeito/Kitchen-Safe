@@ -9,6 +9,7 @@ public class Pan : MonoBehaviour
     public GameObject aguaUi;
     public GameObject prontoUi;
     public GameObject arrozUi;
+    public GameObject corteUi;
     public GameObject pratodearroz;
     private SpawnObject spawnObject;
 
@@ -57,6 +58,8 @@ public class Pan : MonoBehaviour
                             prontoUi.SetActive(true);
                             pratodearroz.SetActive(true);
                             alhoUi.SetActive(false);
+                            arrozUi.SetActive(false);
+                            corteUi.SetActive(false);
 
 
                             Destroy(this.gameObject);
