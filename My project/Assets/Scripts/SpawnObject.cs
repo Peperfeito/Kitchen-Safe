@@ -10,6 +10,7 @@ public class SpawnObject : MonoBehaviour
     public GameObject objectToSpawn2;
     public GameObject objectToSpawn3;
     public GameObject objectToSpawn4;
+    public GameObject objectToSpawn5;
     public GameObject objectSpawner;
 
     public GameObject cebolaUi;
@@ -19,8 +20,9 @@ public class SpawnObject : MonoBehaviour
     public GameObject corteUi;
     public GameObject panelaUi;
     public GameObject fritarUi;
+    public GameObject baconUi;
 
-    
+
 
     public bool cebolapronto = false;
     public bool alhopronto = false;
@@ -36,6 +38,10 @@ public class SpawnObject : MonoBehaviour
     public bool alhoordem = false;
     public bool aguaordem = false;
     public bool arrozordem = false;
+    public bool baconpronto = false;
+    public bool baconordem = false;
+    public bool baconPanela = false;
+
 
     private Vector3 GetMouseWordPosition()
     {
@@ -107,6 +113,9 @@ public class SpawnObject : MonoBehaviour
 
         }
     }
+
+
+
     public void SpawnObject1OnMouse()
     {
         Instantiate(objectToSpawn1, new Vector3(GetMouseWordPosition().x, GetMouseWordPosition().y, objectSpawner.transform.position.z), objectSpawner.transform.rotation);
@@ -161,6 +170,25 @@ public class SpawnObject : MonoBehaviour
                 aguaUi.SetActive(false);
                 panelaUi.SetActive(true);
                 aguapronto = true;
+            }
+
+
+        }
+    }
+
+
+    public void SpawnObject5OnMouse()
+    {
+        Instantiate(objectToSpawn5, new Vector3(GetMouseWordPosition().x, GetMouseWordPosition().y, objectSpawner.transform.position.z), objectSpawner.transform.rotation);
+
+
+        if (aguaordem == true)
+        {
+            if (baconpronto == false)
+            {
+                baconUi.SetActive(false);
+                panelaUi.SetActive(true);
+                baconpronto = true;
             }
 
 

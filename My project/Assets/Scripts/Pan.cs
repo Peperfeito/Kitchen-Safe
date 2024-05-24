@@ -13,8 +13,8 @@ public class Pan : MonoBehaviour
     public GameObject pratodearroz;
     private SpawnObject spawnObject;
 
-    
-
+    [SerializeField] GameObject objetivoUI;
+    [SerializeField] GameObject parabensUI;
 
 
 
@@ -60,7 +60,8 @@ public class Pan : MonoBehaviour
                             alhoUi.SetActive(false);
                             arrozUi.SetActive(false);
                             corteUi.SetActive(false);
-
+                            objetivoUI.SetActive(false);
+                            parabensUI.SetActive(true);
 
                             Destroy(this.gameObject);
                         }
@@ -97,6 +98,8 @@ public class Pan : MonoBehaviour
                             prontoUi.SetActive(true);
                             pratodearroz.SetActive(true);
                             alhoUi.SetActive(false);
+                            objetivoUI.SetActive(false);
+                            parabensUI.SetActive(true);
 
 
                             Destroy(this.gameObject);
@@ -136,6 +139,8 @@ public class Pan : MonoBehaviour
                             prontoUi.SetActive(true);
                             pratodearroz.SetActive(true);
                             alhoUi.SetActive(false);
+                            objetivoUI.SetActive(false);
+                            parabensUI.SetActive(true);
 
 
                             Destroy(this.gameObject);
@@ -182,6 +187,8 @@ public class Pan : MonoBehaviour
                         prontoUi.SetActive(true);
                         pratodearroz.SetActive(true);
                         alhoUi.SetActive(false);
+                        objetivoUI.SetActive(false);
+                        parabensUI.SetActive(true);
 
 
                         Destroy(this.gameObject);

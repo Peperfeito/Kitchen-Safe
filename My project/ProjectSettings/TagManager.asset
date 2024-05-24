@@ -14,6 +14,11 @@ TagManager:
   - CebolaCortada
   - AlhoCortado
   - Faca
+  - Porco
+  - Porco2
+  - Porco3
+  - Porco4
+  - Bacon
   layers:
   - Default
   - TransparentFX
