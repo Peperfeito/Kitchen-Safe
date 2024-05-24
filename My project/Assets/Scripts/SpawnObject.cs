@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
+    Vector3 mousePositionOffset;
+
     public GameObject objectToSpawn1;
     public GameObject objectToSpawn2;
     public GameObject objectToSpawn3;
@@ -35,7 +37,10 @@ public class SpawnObject : MonoBehaviour
     public bool aguaordem = false;
     public bool arrozordem = false;
 
-
+    private Vector3 GetMouseWordPosition()
+    {
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
 
     public void Start()
     {
@@ -89,6 +94,65 @@ public class SpawnObject : MonoBehaviour
     {
         Instantiate(objectToSpawn4, objectSpawner.transform.position, objectSpawner.transform.rotation);
         
+
+        if (arrozordem == true)
+        {
+            if (aguapronto == false)
+            {
+                aguaUi.SetActive(false);
+                panelaUi.SetActive(true);
+                aguapronto = true;
+            }
+
+
+        }
+    }
+    public void SpawnObject1OnMouse()
+    {
+        Instantiate(objectToSpawn1, new Vector3(GetMouseWordPosition().x, GetMouseWordPosition().y, objectSpawner.transform.position.z), objectSpawner.transform.rotation);
+        if (cebolaordem == true)
+        {
+            if (alhopronto == false)
+            {
+                alhoUi.SetActive(false);
+                corteUi.SetActive(true);
+                alhopronto = true;
+            }
+
+        }
+        //instantiate the object in the mouse position with the same z position as the object spawner
+    }
+    public void SpawnObject2OnMouse()
+    {
+        Instantiate(objectToSpawn2, new Vector3(GetMouseWordPosition().x, GetMouseWordPosition().y, objectSpawner.transform.position.z), objectSpawner.transform.rotation);
+        if (cebolapronto == false)
+        {
+            cebolaUi.SetActive(false);
+            corteUi.SetActive(true);
+            cebolapronto = true;
+        }
+    }
+    public void SpawnObject3OnMouse()
+    {
+        Instantiate(objectToSpawn3, new Vector3(GetMouseWordPosition().x, GetMouseWordPosition().y, objectSpawner.transform.position.z), objectSpawner.transform.rotation);
+
+        if (alhoordem == true)
+        {
+            if (arrozpronto == false)
+            {
+                arrozUi.SetActive(false);
+                panelaUi.SetActive(true);
+                arrozpronto = true;
+            }
+
+
+
+        }
+    }
+    public void SpawnObject4OnMouse()
+    {
+        Instantiate(objectToSpawn4, new Vector3(GetMouseWordPosition().x, GetMouseWordPosition().y, objectSpawner.transform.position.z), objectSpawner.transform.rotation);
+
 
         if (arrozordem == true)
         {
