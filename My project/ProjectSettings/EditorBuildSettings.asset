@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fazenda.unity
     guid: 1009dfc78eb9d634c8e4314663b2e722
+  - enabled: 1
+    path: Assets/Scenes/Cozinha2.unity
+    guid: d5513d9d9a6e1ce4c9797798de2fe073
   m_configObjects: {}
