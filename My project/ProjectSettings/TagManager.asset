@@ -13,6 +13,7 @@ TagManager:
   - Agua
   - CebolaCortada
   - AlhoCortado
+  - Faca
   layers:
   - Default
   - TransparentFX
